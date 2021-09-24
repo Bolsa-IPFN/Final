@@ -1,0 +1,22 @@
+{
+  "id": "Arduino_Temp",
+  "serial_port": {
+     "ports_restrict": [
+        "COM5"
+      ],
+      "baud": "9600",
+      "numbits": "8",
+      "stopbits": "1",
+      "partitybits": "0",
+      "listening_timeout": "100000",
+      "death_timeout": "10000000"
+    },
+    "temperature_Port":{
+      "A0":"temp_amb",
+      "A1":"temp_south",
+      "A2":"temp_out",
+      "A3":"temp_in",
+      "A4":"temp_north",
+      "A5":"temp_east"
+    }
+  }
