@@ -82,3 +82,15 @@ def get_temperature_list(db: Session, limit: int):
     #     print('montecarlo get_temperature_list item : ', item.value)
 
     return db_data_list     
+
+def get_temperature_all(db: Session):
+    table = models.Temperature
+    # db_data_list = db.query(models.Temperature).filter().order_by(User.age.desc()).limit(10)
+    # db_data_list =  db.query(models.Temperature).filter(models.Temperature.id==db_data.id-10)
+    db_data_list = db.query(table).order_by(table.id.desc())
+
+    # for item in db_data_list:
+    #     print('montecarlo get_temperature_list item : ', item.value)
+
+    return db_data_list     
+

@@ -18,7 +18,7 @@ import models
 import json
 import schemas
 import threading
-from Serial_Read_Temp import check_Arduino_is_connected,receive_data_from_exp,temperaturelist_data,action_valv
+from Serial_Read_Temp import check_Arduino_is_connected,receive_data_from_exp,temperaturelist_data,action_valv, temperature_all_data
 
 
 
@@ -85,6 +85,11 @@ def get_db():
 #     items = crud.get_items(db, skip=skip, limit=limit)
 #     return items
 
+
+@app.get("/temperature_all",  response_model=List[schemas.Temperature])
+def get_all_temperature(db: Session = Depends(get_db)):
+    all_data = temperature_all_data(db)
+    return list(all_data)
 
 
 @app.get("/temperature_list/{limit}",  response_model=List[schemas.Temperature])

@@ -156,3 +156,6 @@ def receive_data_from_exp(db):
 
 def temperaturelist_data(db, limit: int = 1):
     return crud.get_temperature_list(db, limit)
+
+def temperature_all_data(db):
+    return crud.get_temperature_all(db)

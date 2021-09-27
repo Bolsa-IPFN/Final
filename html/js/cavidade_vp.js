@@ -18,8 +18,9 @@ var valvula_vacu = 1
 var file_names = null;
 var state = null;
 var frist = 0
-let Results = 0//setInterval(getPoints,50)
+let Results = setInterval(getPoints,5000);
 var Names 
+
 
 var R = 0
 var R_old = 0
@@ -81,7 +82,7 @@ function Start(){
     //   }
     // });
 
-	myStartFunction();
+	// myStartFunction();
 	// getPoints();
 	
 	
@@ -127,7 +128,7 @@ function getPoints()
 			if (frist == 0)
 			{
 				Names = Object.keys(response.value);
-				desenharCSV(Names);
+				desenharCSV(response.value);
 				frist = 1;
 			}
 			
@@ -151,7 +152,7 @@ function getPoints()
 					// let j = parseInt(response.Data.circ,10);
 					/* console.log(j); 
 					console.log(typeof response.Data); */
-					Plotly.extendTraces('graph', {x: Array(6).fill([response.value.sample]),y: [[response.value.temp],[response.value.temp_bot],[response.value.temp_in],[response.value.temp_north],[response.value.temp_south],[response.value.temp_top]]}, [0,1,2,3,4,5]);
+					Plotly.extendTraces('graph', {x: Array(6).fill([response.value.sample]),y: [[response.value.temp],[response.value.temp_bot],[response.value.temp_in],[response.value.temp_north],[response.value.temp_south],[response.value.temp_top]]}, [0,1,2,3,4,5],240);
 					// cnt++;
 					// if (cnt >120){
 					// 	Plotly.relayout('graph',{
@@ -198,72 +199,31 @@ function myStartFunction() {
  var point_y
 
 //  https://plotly.com/javascript/streaming/
-function desenharCSV(names) {
-	console.log(names)
-	var trace1 = {
-		x: [],
-		y: [],
-		// xaxis: 'x1',
-		// yaxis: 'y1',
-		mode: 'lines',
-		line: {
-		  color: '#80CAF6',
-		  shape: 'spline'
-		},
-		name: names[1]
-	  };
-	  
-	  var trace2 = {
-		x: [],
-		y: [],
+function desenharCSV(plotdata) {
+	console.log(plotdata)
+	var keys = Object.keys(plotdata);
+	console.log(keys)
+	color = ['#80CAF6','#DF56F1','#FF5733','#2A79DE','#AA2ADE','#32DE2A'];
+	var dados_f = [];
+	for (let i=1; i < keys.length; i++){
 		
-		// xaxis: 'x2',
-		// yaxis: 'y2',
-		mode: 'lines',
-		line: {color: '#DF56F1'},
-		name: names[2]
-	  };
-	  
-	  var trace3 = {
-		x: [],
-		y: [],
-		// xaxis: 'x3',
-		// yaxis: 'y3',
-		mode: 'lines',
-		line: {color: '#FF5733'},
-		name: names[3]
-	  };
-	  
-	  var trace4 = {
-		x: [],
-		y: [],
-		// xaxis: 'x4',
-		// yaxis: 'y4',
-		mode: 'lines',
-		line: {color: '#2A79DE'},
-		name: names[4]
-	  };
+		dados_f.push({
+					name: keys[i].toString(),
+					x: [],
+					y: [],
+					mode: 'lines+markers',
+					marker: {
+					color: color[i-1],
+					size: 3,
+					},
+					line: {
+					color: color[i-1],
+					width: 1,
+					},
+					// type: 'scatter',
+				});
 
-	  var trace5 = {
-		x: [],
-		y: [],
-		// xaxis: 'x5',
-		// yaxis: 'y5',
-		mode: 'lines',
-		line: {color: '#AA2ADE'},
-		name: names[5]
-	  };
-	  
-	  var trace6 = {
-		x: [],
-		y: [],
-		// xaxis: 'x6',
-		// yaxis: 'y6',
-		mode: 'lines',
-		line: {color: '#32DE2A'},
-		name: names[6]
-	  };
-	var dados_f = [trace1,trace2,trace3,trace4,trace5,trace6];
+	}
 	var layout = {
 		// xaxis: {
 		// 	type: 'date'
@@ -271,6 +231,24 @@ function desenharCSV(names) {
 		title: 'Temp\'s',
 		width: 1600,
 		height: 700,	
+		xaxis:{
+			title:{
+				text:'Time',
+			},
+			titlefont:{
+				size:20,
+			},
+			autorange: true,
+		},
+		yaxis:{
+			title:{
+				text:'Temperature [ºC]',
+			},
+			titlefont:{
+				size:20,
+			},
+			autorange: true,
+		}
 		// yaxis: {range: [24, 30]},	
 	};
 	// console.log(dados_f);
