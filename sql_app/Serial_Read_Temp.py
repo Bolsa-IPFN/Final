@@ -53,6 +53,9 @@ def try_to_lock_experiment(config_json, serial_port):
 def check_Arduino_is_connected():
     global CONFIG_OF_EXP
     global serial_port
+    global port
+    global baud
+    global desth_timeout
     val =  get_Config(Exp)
     print (val)
     print("Recebi mensagem de configuracao. A tentar inicializar a experiencia\n")
@@ -117,13 +120,32 @@ def action_valv(comand):
 
 def do_reset_serial_com():
     global serial_port
+    global port
+    global baud
+    global desth_timeout
     if serial_port.is_open :
             serial_port.reset_input_buffer()
-            pass
-    else:
-        serial_port = serial.Serial(port = port,\
+            serial_port.close();
+            try:
+                serial_port = serial.Serial(port = port,\
                                     baudrate=baud,\
                                     timeout = desth_timeout)
+            except:
+                print("Não encontrei nenhum Arduino\n")
+            pass
+    else:
+        print ("Passei por aqui!\n")
+        print (port)
+        print("\n")
+        print (baud)
+        print("\n")
+        print(desth_timeout)
+        try:
+            serial_port = serial.Serial(port = port,\
+                                    baudrate=baud,\
+                                    timeout = desth_timeout)
+        except:
+            print("Não encontrei nenhum Arduino\n")
     return ''
     
 
@@ -131,8 +153,9 @@ def do_reset_serial_com():
 def receive_data_from_exp(db):
     global serial_port
     while True:
-        print("ola")
+        # print("ola")
         if serial_port.is_open == False:
+            do_reset_serial_com()
             print("não existe serial")
         else:
             try:

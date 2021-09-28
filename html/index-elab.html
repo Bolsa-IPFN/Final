@@ -31,46 +31,36 @@
 
 </head>
 <body>
-	<br/>
-	
-	
-	<table >
-		<thead>
-		  <tr>
-			<th  colspan="4">
-			<div class="clearfix float-my-children">
-				<div style="margin-left: 100px;margin-top: 10px;">
-				  <img src="http://e-lab.ist.eu/rec.web/javax.faces.resource/elab_logo.png.faces?ln=images" >
+	<div class="clearfix float-my-children" style = "margin-top:-15px; margin-right:-100px;  background-color: #99CCFF;">
+				<div style="margin-left: 50px; margin-top: 35px; color:darkblue; ">
+				  <h1 style="font-weight: bold;"> Grafical intreface of the temperature mergement </h1>
+				</div>
+				<div style="margin-left: 800px;margin-top: 10px;margin-right:100px;">
+				  <img src="https://www.ipfn.tecnico.ulisboa.pt/assets/img/ipfn-logo.png" width="128" height="43.76" style="margin-right:10px;">
+				  <img src="https://act.fct.pt/wp-content/uploads/2014/06/2017_FCT20Anos_V_cor-1024x829.png" width="104" height="84" style="margin-right:10px;"> 
+				  <img src="https://www.ulisboa.pt/sites/ulisboa.pt/files/styles/logos_80px_vert/public/uo/logos/logo_ist.jpg?itok=2NCqbcIP" width="120" height="52.8" style="margin-left:10px ; margin-right:-72px;">
 				</div>
 				
-				<div style="margin-left: 5px; margin-top: 15px; color:#86b300;">
-				  <h1>- Bolsa IPFN V1</h1>
 				</div>
-				</div>
-				<div style = "width:1600px;">
+				<div style = "width:1600px; height = 30px" >
 				
-					<nav>
+					<nav style = "width:1600px; height = 30px">
 						<ul>
 							<li><a href="/">Home</a></li>
 							<li><a href="/Check_Data">Check Data</a></li>
 						</ul>
 					</nav>
 				</div>
-				
+				<br>
 				<br/>
-				
-				
-				<br/>
-				<hr/>	
-			</th>
-		  </tr>
-		</thead>
-		</table>
+				<hr>
+	
+
 		<div >
-			<table style="margin-left: auto; margin-right: auto; border: 3px solid #73AD21;">
+			<table style="margin-left: auto; margin-right: auto; margin-top:-5px; border: 3px solid darkblue;">
 				<thead>
 					<tr >
-						<td style="border: 3px solid #73AD21;">
+						<!--td style="border: 3px solid darkblue;">
 							<div class="sansserif" style="margin-left: 2px; margin-right: 2px;">
 							
 								<div>
@@ -81,9 +71,9 @@
 									<button id="button_stop" onclick="Stop()">Stop </button>
 								</div>
 							</div>
-						</td>
-						<td style="border: 3px solid #73AD21;">
-							<label class="switch" style="margin-left: 2px; margin-right: 2px;">
+						</td>-->
+						<td style="border: 3px solid #004C99;">
+							<label class="switch" style="margin-top:5px; margin-left: 2px; margin-right: 2px;">
 								<input type="checkbox" id="togBtnDescarga" onclick="Val_Action(1)">
 								<div class="slider round" >
 								<!--ADDED HTML -->
@@ -93,8 +83,8 @@
 								</div>
 							</label>
 						</td>
-						<td style="border: 3px solid #73AD21;">
-							<label class="switch" style="margin-left: 2px; margin-right: 2px;">
+						<td style="border: 3px solid #004C99;">
+							<label class="switch" style="margin-top:5px; margin-left: 2px; margin-right: 2px;">
 								<input type="checkbox" id="togBtnDescarga" onclick="Val_Action(2)">
 								<div class="slider round" >
 								<!--ADDED HTML -->
@@ -104,8 +94,8 @@
 								</div>
 							</label>
 						</td>
-						<td style="border: 3px solid #73AD21;">
-							<label class="switch" style="margin-left: 2px; margin-right: 2px;">
+						<td style="border: 3px solid #004C99;">
+							<label class="switch" style=" margin-top:5px; margin-left: 2px; margin-right: 2px;">
 								<input type="checkbox" id="togBtnDescarga" onclick="Val_Action(3)">
 								<div class="slider round" >
 								<!--ADDED HTML -->
@@ -115,8 +105,8 @@
 								</div>
 							</label>
 						</td>
-						<td style="border: 3px solid #73AD21;">
-							<label class="switch" style="margin-left: 2px; margin-right: 2px;">
+						<td style="border: 3px solid #004C99;">
+							<label class="switch" style="margin-top:5px; margin-left: 2px; margin-right: 2px;">
 								<input type="checkbox" id="togBtnDescarga" onclick="Val_Action(4)">
 								<div class="slider round" >
 								<!--ADDED HTML -->
@@ -126,8 +116,8 @@
 								</div>
 							</label>
 						</td>
-						<td style="border: 3px solid #73AD21;">
-							<label class="switch" style="margin-left: 2px; margin-right: 2px;">
+						<td style="border: 3px solid #004C99;">
+							<label class="switch" style="margin-top:5px; margin-left: 2px; margin-right: 2px;">
 								<input type="checkbox" id="togBtnDescarga" onclick="Val_Action(5)">
 								<div class="slider round" >
 								<!--ADDED HTML -->
@@ -142,87 +132,17 @@
 			</table>
 		</div>
 		<div style=" margin-left: 100px; margin-rigth: 100px;">
-			<div id='graph' style=" margin:center; margin-rigth: 100px; max-width: 1700px; max-height: 800px;  border: 3px solid #73AD21;">
+			<div id='graph' style=" margin:center; margin-rigth: 100px; max-width: 1700px; max-height: 800px;  border: 3px solid #004C99;">
 			</div>
 		</div>
-	</table>
-	
- 
-	
- <!-- "margin-left: 10px; width: 1000px; height: 1000px;"> -->
-	
-
-    
-	
-
-
-	
-	
-	
-<!-- 	<div class="sansserif" style="margin-left: 30px;">
-	
-	<div>
-		<button id="button_strat_arinst_2" onclick="putArinst()">Start Arinst</button>
+	<div class="footer" >
+		<p style= "margin-top:5px;">Frontend and Backend created by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/PedroRossa98" property="cc:attributionName" rel="cc:attributionURL">Pedro Rosa</a> and improved by 
+		<a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/Ze-Veiga98" property="cc:attributionName" rel="cc:attributionURL">José Veiga</a>.
+		<br>
+		Source code available on GitHub repository <a href="https://github.com/PedroRossa98/Bolsa_IPFN_2021">PedroRossa98/Bolsa_IPFN_2021</a>.</p>
 	</div>
-	
-	
-	<div>
-		<button id="button_strat_total" onclick="getCsv()">Start</button>
-	</div>
-	
-	<div>
-		<button id="button_data_csv" onclick="parseData()">Buscar data</button>
-	</div>
-
-	<div>
-		<button id="button_data_csv2" onclick="parseData2()">Buscar data 2</button>
-	</div>	
 		
-	<div>
-		<button id="button_desenhar" onclick="drawGraph()">Desenhar</button>
-	</div>
-
-	
-	<hr/>
-	<br/>
-	<div>
-        <label id="pressure">Pressure : </label>
-	</div>
-	<div>
-        <label id="filenames">Files : </label>
-	</div>
-	</div> -->
-	
-
-	
-	
-
-  <!-- <div id='graph_1' style="margin-left: 50px; width: 1000px;">
-  <!-- Plotly chart will be drawn inside this DIV </div>-->
-
-	<!-- <div style="margin-left: 50px; width: 1000px;">
-		<canvas id="graph_1"  width="500" height="200"></canvas>
-	</div>
-
-	<div>
-		<p id="ip"></p>
-	</div>
-  <script> 
-    console.log(env.IP, env.USER, env.HOSTNAME);
-    document.getElementById("ip").innerHTML = env.IP;
-  </script>
-  
-  <label class="switch">
-    <input type="checkbox" id="togBtn">
-     <div class="slider round">
-      
-      <span class="on">LIGAR</span>
-      <span class="off">DESLIGAR</span>
-      
-     </div>
-  </label>
-
-  <br/> -->
+ 
 </body>
 
 <script type="text/javascript" src='js/elab.js'></script>

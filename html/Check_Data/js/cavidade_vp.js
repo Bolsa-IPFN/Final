@@ -189,6 +189,10 @@ function myStartFunction() {
 
 //  https://plotly.com/javascript/streaming/
 function desenharCSV(plotdata_all) {
+	var currentdate = new Date(); 
+	console.log(currentdate)
+	console.log(currentdate.getFullYear().toString() + '-' + (currentdate.getMonth()+1).toString() + '-' + (currentdate.getDate()-4).toString()+ ' '+currentdate.getHours().toString() + ":"  + currentdate.getMinutes().toString() + ":" + currentdate.getSeconds().toString(), currentdate.getFullYear().toString() + '-' + (currentdate.getMonth()+1).toString() + '-' + currentdate.getDate().toString()+ ' '+currentdate.getHours().toString() + ":"  + currentdate.getMinutes().toString() + ":" + currentdate.getSeconds().toString())
+	console.log(typeof(currentdate.getFullYear().toString() + '-' + currentdate.getMonth().toString() + '-' + (currentdate.getDate()-4).toString()))
 	console.log(plotdata_all)
 	var keys = Object.keys(plotdata_all[0]);
 	console.log(keys)
@@ -209,7 +213,7 @@ function desenharCSV(plotdata_all) {
 							width: 1,
 						  },
 						  mode: 'lines+markers',
-						  type: 'scatter',
+						  type: "scattergl",
 						});
 
 			}
@@ -220,22 +224,47 @@ function desenharCSV(plotdata_all) {
 		title: 'Temp\'s',
 		width: 1600,
 		height: 700,	
-		xaxis:{
-			title:{
-				text:'Time',
-			},
-			titlefont:{
-				size:20,
-			},
-		},
 		yaxis:{
+			autorange: true,
 			title:{
 				text:'Temperature [ºC]',
 			},
 			titlefont:{
 				size:20,
 			},
-		}
+		},
+		xaxis: {
+			title:{
+				text:'Time',
+			},
+			titlefont:{
+				size:20,
+			},
+			autorange: true,
+			range: [ currentdate.getFullYear().toString() + '-' + (currentdate.getMonth()+1).toString() + '-' + (currentdate.getDate()-1).toString()+ ' '+currentdate.getHours().toString() + ":"  + currentdate.getMinutes().toString() + ":" + currentdate.getSeconds().toString(), currentdate.getFullYear().toString() + '-' +(currentdate.getMonth()+1).toString() + '-' + currentdate.getDate().toString()+ ' '+currentdate.getHours().toString() + ":"  + currentdate.getMinutes().toString() + ":" + currentdate.getSeconds().toString()],
+			rangeselector: {buttons: [
+				{
+				count: 1,
+				label: '1d',
+				step: 'day',
+				stepmode: 'backward'
+				},
+				{
+				count: 20,
+				label: '20min',
+				step: 'minute',
+				stepmode: 'backward'
+				},
+				{step: 'all'}
+			]},
+			rangeslider: {range: [ currentdate.getFullYear().toString() + '-' + (currentdate.getMonth()+1).toString() + '-' + (currentdate.getDate()-4).toString()+ ' '+currentdate.getHours().toString() + ":"  + currentdate.getMinutes().toString() + ":" + currentdate.getSeconds().toString(), currentdate.getFullYear().toString() + '-' + (currentdate.getMonth()+1).toString() + '-' + currentdate.getDate().toString()+ ' '+currentdate.getHours().toString() + ":"  + currentdate.getMinutes().toString() + ":" + currentdate.getSeconds().toString()]},
+			type: 'date'
+		},
+		// yaxis: {
+		// 	autorange: true,
+		// 	range: [86.8700008333, 138.870004167],
+		// 	type: 'linear'
+		// }
 		// yaxis: {range: [24, 30]},	
 	};
 	// console.log(dados_f);

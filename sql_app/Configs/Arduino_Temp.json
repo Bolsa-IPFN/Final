@@ -11,6 +11,14 @@
       "listening_timeout": "100000",
       "death_timeout": "10000000"
     },
+    "sensor_type":{
+      "A0": "termopar_amb",
+      "A1": "lm35",
+      "A2": "termopar_ht",
+      "A3": "termopar_ht",
+      "A4": "lm35",
+      "A5": "lm35"
+    },
     "temperature_Port":{
       "A0":"temp_amb",
       "A1":"temp_south",

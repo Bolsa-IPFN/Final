@@ -48,3 +48,15 @@
 .btn {
     margin: 1px;
 }
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 35px;
+    width: 100%;
+    background-color: #99CCFF;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    vertical-align: middle;
+  }
