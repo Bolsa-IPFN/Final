@@ -7788,3 +7788,4 @@
 114.7.20.38 - - [28/Sep/2021:17:06:49 +0100] "GET / HTTP/1.1" 200 6453 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/601.7.7 (KHTML, like Gecko) Version/9.1.2 Safari/601.7.7"
 203.159.80.44 - - [28/Sep/2021:18:47:03 +0100] "GET / HTTP/1.1" 200 6453 "-" "Linux Gnu (cow)"
 45.95.147.14 - - [28/Sep/2021:18:51:18 +0100] "GET / HTTP/1.1" 200 6453 "-" "-"
+107.2.49.94 - - [28/Sep/2021:19:10:41 +0100] "GET / HTTP/1.1" 200 6453 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
