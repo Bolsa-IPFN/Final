@@ -325,7 +325,7 @@ graph = new Chart(ctx, {
 			data: [ ],
 		},],
 	},
-	xAxis_crosshair_enabled: true,
+	// xAxis_crosshair_enabled: true,
 	options: {
 		plugins: {
 			legend: {
@@ -348,6 +348,27 @@ graph = new Chart(ctx, {
 					text: 'Time [HH:MM:SS]',
 				},
 			},
+		},
+		
+		legend: {
+			align: 'left',
+			verticalAlign: 'top',
+			borderWidth: 0
+		},
+	
+		tooltip: {
+			shared: true,
+			crosshairs: true
+		},
+	
+		plotOptions: {
+			series: {
+				cursor: 'pointer',
+				className: 'popup-on-click',
+				marker: {
+					lineWidth: 1
+				}
+			}
 		},
 	}
 });
