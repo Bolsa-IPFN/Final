@@ -271,6 +271,25 @@ function plot_data_charjs(data)
 
 
 color = ['#9F1B00','#DF56F1','#FF5733','#2A79DE','#AA2ADE','#32DE2A'];
+
+const zoomOptions = {
+	pan: {
+	  enabled: true,
+	  mode: 'xy',
+	  modifierKey: 'ctrl',
+	},
+	zoom: {
+	  mode: 'xy',
+	  drag: {
+		enabled: true,
+		borderColor: 'rgb(54, 162, 235)',
+		borderWidth: 1,
+		backgroundColor: 'rgba(54, 162, 235, 0.3)'
+	  }
+	}
+  };
+
+
 ctx = $("#plot_data_time")[0].getContext('2d');
 graph = new Chart(ctx, {
 	type: 'line',
@@ -333,12 +352,13 @@ graph = new Chart(ctx, {
 	},
 	// xAxis_crosshair_enabled: true,
 	options: {
-		// plugins: {
-		// 	legend: {
-		// 		display: false,
-		// 	}, 
-		// 	autocolors: false,
-		// },
+		plugins: {
+			zoom: zoomOptions,
+			// legend: {
+			// 	display: false,
+			// }, 
+			// autocolors: false,
+		},
 		scales: {
 			y: {
 				title:{
