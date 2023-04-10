@@ -270,7 +270,7 @@ function plot_data_charjs(data)
 }
 
 
-color = ['#80CAF6','#DF56F1','#FF5733','#2A79DE','#AA2ADE','#32DE2A'];
+color = ['#9F1B00','#DF56F1','#FF5733','#2A79DE','#AA2ADE','#32DE2A'];
 ctx = $("#plot_data_time")[0].getContext('2d');
 graph = new Chart(ctx, {
 	type: 'line',
