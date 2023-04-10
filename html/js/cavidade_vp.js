@@ -277,6 +277,7 @@ graph = new Chart(ctx, {
 	labels: [],
 	data: {
 		datasets: [{
+			label: 'T1',
 			borderColor: color[0],
 			backgroundColor: color[0],
 			pointRadius:2,
@@ -285,6 +286,7 @@ graph = new Chart(ctx, {
 			data: [ ],
 		},
 		{
+			label: 'T2',
 			borderColor: color[1],
 			backgroundColor: color[1],
 			pointRadius:2,
@@ -293,6 +295,7 @@ graph = new Chart(ctx, {
 			data: [ ],
 		},
 	    {
+			label: 'T3',
 			borderColor: color[2],
 			backgroundColor: color[2],
 			pointRadius:2,
@@ -301,6 +304,7 @@ graph = new Chart(ctx, {
 			data: [ ],
 		},
 	    {
+			label: 'T4',
 			borderColor: color[3],
 			backgroundColor: color[3],
 			pointRadius:2,
@@ -309,6 +313,7 @@ graph = new Chart(ctx, {
 			data: [ ],
 		},
 		{
+			label: 'T5',
 			borderColor: color[4],
 			backgroundColor: color[4],
 			pointRadius:2,
@@ -317,6 +322,7 @@ graph = new Chart(ctx, {
 			data: [ ],
 		},
 		{
+			label: 'T6',
 			borderColor: color[5],
 			backgroundColor: color[5],
 			pointRadius:2,
@@ -327,12 +333,12 @@ graph = new Chart(ctx, {
 	},
 	// xAxis_crosshair_enabled: true,
 	options: {
-		plugins: {
-			legend: {
-				display: false,
-			}, 
-			autocolors: false,
-		},
+		// plugins: {
+		// 	legend: {
+		// 		display: false,
+		// 	}, 
+		// 	autocolors: false,
+		// },
 		scales: {
 			y: {
 				title:{
