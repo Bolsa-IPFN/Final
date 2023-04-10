@@ -2,14 +2,21 @@
 <head>
 <meta charset="UTF-8">
 <title>E Lab</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 <link rel="shortcut icon" type="image/png" href="">
 <link rel="shortcut icon" href="http://e-lab.ist.eu/rec.web/faviconElab.ico">
 <link rel="stylesheet" href="css/elab.css">
-<link rel="stylesheet" href="css/toggle-button.css">
+<!-- <link rel="stylesheet" href="css/toggle-button.css"> -->
 <link rel="stylesheet" href="css/tool-bar.css">
+<!-- <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css"> -->
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<!-- <script src="semantic/dist/semantic.min.js"></script> -->
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://d3js.org/d3.v6.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -70,78 +77,73 @@
 	
 
 		<div >
-			<table style="margin-left: auto; margin-right: auto; margin-top:-5px; border: 3px solid darkblue;">
+			<table style="margin-left: auto; margin-right: auto; margin-top: 10px; margin-bottom: 10px; border: 3px solid darkblue; border-collapse: collapse;">
 				<thead>
-					<tr >
-						<!--td style="border: 3px solid darkblue;">
-							<div class="sansserif" style="margin-left: 2px; margin-right: 2px;">
-							
-								<div>
-									<button id="button_strat" onclick="Start()">Start </button>
+				<tr>
+					<td style="border: 3px solid #004C99;  text-align:center;">
+						<label>
+							V1
+						</label>
+					</td>
+					<td style="border: 3px solid #004C99;  text-align:center;">
+						<label>
+							V2
+						</label>
+					</td>
+					<td style="border: 3px solid #004C99;  text-align:center;">
+						<label>
+							V3
+						</label>
+					</td>
+					<td style="border: 3px solid #004C99;  text-align:center;">
+						<label>
+							V4
+						</label>
+					</td>
+					<td style="border: 3px solid #004C99;  text-align:center;">
+						<label>
+							V5
+						</label>
+					</td>
+				</tr>
+				</thead>
+					<tr>
+						<td style="border: 3px solid #004C99; ">
+								<div class="ui toggle checkbox" style="margin-left: 5px; margin-top: 5px; margin-bottom: 5px;" onclick="Val_Action(1)">
+									<input type="checkbox" name="public">
+									<label>
+								   </label>
 								</div>
-
-								<div>
-									<button id="button_stop" onclick="Stop()">Stop </button>
-								</div>
-							</div>
-						</td>-->
-						<td style="border: 3px solid #004C99;">
-							<label class="switch" style="margin-top:5px; margin-left: 2px; margin-right: 2px;">
-								<input type="checkbox" id="togBtnDescarga" onclick="Val_Action(1)">
-								<div class="slider round" >
-								<!--ADDED HTML -->
-									<span class="on">ON</span>
-									<span class="off">OFF</span>
-								<!--END-->
-								</div>
-							</label>
 						</td>
-						<td style="border: 3px solid #004C99;">
-							<label class="switch" style="margin-top:5px; margin-left: 2px; margin-right: 2px;">
-								<input type="checkbox" id="togBtnDescarga" onclick="Val_Action(2)">
-								<div class="slider round" >
-								<!--ADDED HTML -->
-									<span class="on">ON</span>
-									<span class="off">OFF</span>
-								<!--END-->
+						<td style="border: 3px solid #004C99; ">
+								<div class="ui toggle checkbox" style="margin-left: 5px; margin-top: 5px; margin-bottom: 5px;" onclick="Val_Action(2)">
+									<input type="checkbox" name="public">
+									<label>
+								</label>
 								</div>
-							</label>
 						</td>
-						<td style="border: 3px solid #004C99;">
-							<label class="switch" style=" margin-top:5px; margin-left: 2px; margin-right: 2px;">
-								<input type="checkbox" id="togBtnDescarga" onclick="Val_Action(3)">
-								<div class="slider round" >
-								<!--ADDED HTML -->
-									<span class="on">ON</span>
-									<span class="off">OFF</span>
-								<!--END-->
+						<td style="border: 3px solid #004C99; ">
+								<div class="ui toggle checkbox" style="margin-left: 5px; margin-top: 5px; margin-bottom: 5px;" onclick="Val_Action(3)">
+									<input type="checkbox" name="public">
+									<label>
+								</label>
 								</div>
-							</label>
 						</td>
-						<td style="border: 3px solid #004C99;">
-							<label class="switch" style="margin-top:5px; margin-left: 2px; margin-right: 2px;">
-								<input type="checkbox" id="togBtnDescarga" onclick="Val_Action(4)">
-								<div class="slider round" >
-								<!--ADDED HTML -->
-									<span class="on">ON</span>
-									<span class="off">OFF</span>
-								<!--END-->
+						<td style="border: 3px solid #004C99; ">
+								<div class="ui toggle checkbox" style="margin-left: 5px; margin-top: 5px; margin-bottom: 5px;" onclick="Val_Action(4)">
+									<input type="checkbox" name="public">
+									<label>
+								</label>
 								</div>
-							</label>
 						</td>
-						<td style="border: 3px solid #004C99;">
-							<label class="switch" style="margin-top:5px; margin-left: 2px; margin-right: 2px;">
-								<input type="checkbox" id="togBtnDescarga" onclick="Val_Action(5)">
-								<div class="slider round" >
-								<!--ADDED HTML -->
-									<span class="on">ON</span>
-									<span class="off">OFF</span>
-								<!--END-->
+						<td style="border: 3px solid #004C99; ">
+								<div class="ui toggle checkbox" style="margin-left: 5px; margin-top: 5px; margin-bottom: 5px;" onclick="Val_Action(5)">
+									<input type="checkbox" name="public">
+									<label>
+								</label>
 								</div>
-							</label>
 						</td>
 					</tr>
-				</thead>
 			</table>
 		</div>
 		<div style=" margin-left: 100px; margin-right: 100px;">
