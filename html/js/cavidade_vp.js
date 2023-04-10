@@ -357,7 +357,7 @@ graph = new Chart(ctx, {
 		},
 		responsive: true,
 		legend: {
-		  display: false
+			position: "right",
 		},
 		tooltips: {
 		  mode: 'index',
