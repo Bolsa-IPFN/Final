@@ -349,38 +349,23 @@ graph = new Chart(ctx, {
 				},
 			},
 		},
-		
-	},
-	legend: {
-        align: 'left',
-        verticalAlign: 'top',
-        borderWidth: 0
-    },
-
-    tooltip: {
-        shared: true,
-        crosshairs: true
-    },
-
-    plotOptions: {
-        series: {
-            cursor: 'pointer',
-            className: 'popup-on-click',
-            marker: {
-                lineWidth: 1
-            }
-        }
-    },
-
-    series: [{
-        name: 'All sessions',
-        lineWidth: 4,
-        marker: {
-            radius: 4
-        }
-    }, {
-        name: 'New users'
-    }]
+		responsive: true,
+		legend: {
+		  display: false
+		},
+		tooltips: {
+		  mode: 'index',
+		  callbacks: {
+			labelColor: tooltipItem => {
+			  var color = tooltipItem.datasetIndex == 0 ? 'green' : 'red';
+			  return {
+				borderColor: color,
+				backgroundColor: color
+			  }
+			}
+		  }
+		}
+	  }
 });
 //{'msg_id': '11', 'timestamp': '1626908928778728200', 'status': 'Experiment Ended', 'Data': ''}
 function myStopFunction() {
