@@ -37,33 +37,33 @@ let numberElements = 240;
 var graph 
 
 function Val_Action(Pin){
-	// Pin_Val[Pin-1] =1 - Pin_Val[Pin-1]; 
-	// console.log(Pin_Val)
-	// JSON = '{"experiment_name": "Arduino_Temp", "experiment_action": {"val_'+Pin.toString()+'":'+ Pin_Val[Pin-1]+'}}'
-	// //var url = 'http://' + rpiIP + ':8085/gpio/switch?pin=4&status=on&time=' + time;
-	// var url = 'http://' + rpiIP + '/action_experiment';
-	// console.log(JSON)
-	// $.ajax({
-	// 	url: url,      //Your api url
-	// 	type: 'POST',   //type is any HTTP method
-	// 	contentType: 'application/json;charset=UTF-8',
-	// 	data: JSON,
-	// 	//Data as js object
-	// 	success: function (response) {
-	// 	  console.log('PUT Response Pin : ' +  response);
-	// 	}
-	//   });
+	Pin_Val[Pin-1] =1 - Pin_Val[Pin-1]; 
+	console.log(Pin_Val)
+	json_data_send = '{"experiment_name": "Arduino_Temp", "experiment_action": {"val_'+Pin.toString()+'":'+ Pin_Val[Pin-1]+'}}'
+	//var url = 'http://' + rpiIP + ':8085/gpio/switch?pin=4&status=on&time=' + time;
+	var url = 'http://' + rpiIP + '/action_experiment';
+	console.log(json_data_send)
+	$.ajax({
+		url: url,      //Your api url
+		type: 'POST',   //type is any HTTP method
+		contentType: 'application/json;charset=UTF-8',
+		data: json_data_send,
+		//Data as js object
+		success: function (response) {
+		  console.log('PUT Response Pin : ' +  response);
+		}
+	  });
 }
 
 
 
 function Start(){
-	// JSON = '{"experiment_name": "Arduino_Temp", "config_experiment": {"R":"5","I":"5"}}'
+	// json_data_send = '{"experiment_name": "Arduino_Temp", "config_experiment": {"R":"5","I":"5"}}'
 	// var url = 'http://' + rpiIP + '/start_experiment';
 	// frist = 0;
 	// cnt = 0;
-	// console.log('JSON : ' +  url);
-	// console.log('JSON : ' +  JSON);
+	// console.log('json_data_send : ' +  url);
+	// console.log('json_data_send : ' +  json_data_send);
 	// dados_f=[]
 	// // dados_f = [];
 	
@@ -78,7 +78,7 @@ function Start(){
     //   url: url,      //Your api url
     //   type: 'POST',   //type is any HTTP method
     //   contentType: 'application/json;charset=UTF-8',
-	//   data: JSON,
+	//   data: json_data_send,
     //   //Data as js object
     //   success: function (response) {
 	// 	console.log('PUT Response Pin : ola ' +  response);
@@ -94,14 +94,14 @@ function Start(){
 }
 
 function Stop(){
-	JSON = '{"experiment_name": "Arduino_Temp"}';
+	json_data_send = '{"experiment_name": "Arduino_Temp"}';
 	var url = 'http://' + rpiIP + '/stop_experiment';
 	dados_f=[]
 	$.ajax({
       url: url,      //Your api url
       type: 'POST',   //type is any HTTP method
-      contentType: 'application/json;charset=UTF-8',
-	  data: JSON,
+      contentType: 'application/json_data_send;charset=UTF-8',
+	  data: json_data_send,
       //Data as js object
       success: function (response) {
 		console.log('PUT Response Pin : ola 2 ' +  response);
