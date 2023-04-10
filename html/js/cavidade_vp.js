@@ -43,16 +43,16 @@ function Val_Action(Pin){
 	//var url = 'http://' + rpiIP + ':8085/gpio/switch?pin=4&status=on&time=' + time;
 	var url = 'http://' + rpiIP + '/action_experiment';
 	console.log(JSON)
-	$.ajax({
-		url: url,      //Your api url
-		type: 'POST',   //type is any HTTP method
-		contentType: 'application/json;charset=UTF-8',
-		data: JSON,
-		//Data as js object
-		success: function (response) {
-		  console.log('PUT Response Pin : ' +  response);
-		}
-	  });
+	// $.ajax({
+	// 	url: url,      //Your api url
+	// 	type: 'POST',   //type is any HTTP method
+	// 	contentType: 'application/json;charset=UTF-8',
+	// 	data: JSON,
+	// 	//Data as js object
+	// 	success: function (response) {
+	// 	  console.log('PUT Response Pin : ' +  response);
+	// 	}
+	//   });
 }
 
 
