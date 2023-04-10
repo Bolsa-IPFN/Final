@@ -37,12 +37,12 @@ let numberElements = 240;
 var graph 
 
 function Val_Action(Pin){
-	Pin_Val[Pin-1] =1 - Pin_Val[Pin-1]; 
-	console.log(Pin_Val)
-	JSON = '{"experiment_name": "Arduino_Temp", "experiment_action": {"val_'+Pin.toString()+'":'+ Pin_Val[Pin-1]+'}}'
-	//var url = 'http://' + rpiIP + ':8085/gpio/switch?pin=4&status=on&time=' + time;
-	var url = 'http://' + rpiIP + '/action_experiment';
-	console.log(JSON)
+	// Pin_Val[Pin-1] =1 - Pin_Val[Pin-1]; 
+	// console.log(Pin_Val)
+	// JSON = '{"experiment_name": "Arduino_Temp", "experiment_action": {"val_'+Pin.toString()+'":'+ Pin_Val[Pin-1]+'}}'
+	// //var url = 'http://' + rpiIP + ':8085/gpio/switch?pin=4&status=on&time=' + time;
+	// var url = 'http://' + rpiIP + '/action_experiment';
+	// console.log(JSON)
 	// $.ajax({
 	// 	url: url,      //Your api url
 	// 	type: 'POST',   //type is any HTTP method
