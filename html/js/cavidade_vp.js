@@ -281,7 +281,7 @@ graph = new Chart(ctx, {
 			y: {
 				title:{
 					display: true, 
-					text: gettext('Pressure [Pa]'),
+					text: 'Temperature [K]',
 				}
 				//  min: 8.5,
 				//max: 9.5,
@@ -289,7 +289,7 @@ graph = new Chart(ctx, {
 			x: {
 				title:{
 					display: true, 
-					text: gettext('Elapsed Time[HH:MM:SS]'),
+					text: 'Time [HH:MM:SS]',
 				},
 			},
 		},
