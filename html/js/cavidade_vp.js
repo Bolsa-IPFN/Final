@@ -33,7 +33,7 @@ var Pin_Val = [0,0,0,0,0];
 let cnt =0 
 
 let updateCount = 0;
-let numberElements = 240;
+let numberElements = 120;
 var graph 
 
 function Val_Action(Pin){
