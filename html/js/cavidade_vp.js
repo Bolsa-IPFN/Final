@@ -363,7 +363,7 @@ graph = new Chart(ctx, {
 		  mode: 'index',
 		  callbacks: {
 			labelColor: tooltipItem => {
-			  var color = tooltipItem.datasetIndex == 0 ? 'green' : 'red';
+			  var color = color[tooltipItem.datasetIndex];
 			  return {
 				borderColor: color,
 				backgroundColor: color
