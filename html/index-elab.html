@@ -37,7 +37,8 @@
 <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
 <script src="https://unpkg.com/chartjs-plugin-zoom@1.0.0-beta.1/dist/chartjs-plugin-zoom.min.js"></script>
 
-
+<script src="https://unpkg.com/chartjs-chart-error-bars@3.7.2/build/index.umd.min.js"></script>
+<script src="https://d3js.org/d3-array.v3.min.js"></script>
 
 <script src='config/env.js'></script>
 
@@ -145,6 +146,7 @@
 		</div>
 		<div style=" margin-left: 100px; margin-rigth: 100px;">
 			<div id='graph' style=" margin:center; margin-rigth: 100px; max-width: 1700px; max-height: 800px;  border: 3px solid #004C99;">
+				<canvas id="plot_data_time"></canvas>
 			</div>
 		</div>
 	<div class="footer" >

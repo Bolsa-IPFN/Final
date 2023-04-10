@@ -256,7 +256,7 @@ function plot_data_charjs(data)
 	else updateCount++;
 	graph.update();
 }
-ctx = $("#graph")[0].getContext('2d');
+ctx = $("#plot_data_time")[0].getContext('2d');
 graph = new Chart(ctx, {
 	type: 'line',
 	labels: [],
