@@ -250,25 +250,78 @@ function plot_data_charjs(data)
 		console.log(data.value)
 		graph.data.labels.push(data.value.sample);
 		graph.data.datasets[0].data.push(data.value.temp);
+		graph.data.datasets[1].data.push(data.value.temp_bot);
+		graph.data.datasets[2].data.push(data.value.temp_in);
+		graph.data.datasets[3].data.push(data.value.temp_north);
+		graph.data.datasets[4].data.push(data.value.temp_south);
+		graph.data.datasets[5].data.push(data.value.temp_top);
 	}
 	if (updateCount > numberElements){
 		graph.data.labels.shift();
 		graph.data.datasets[0].data.shift();
+		graph.data.datasets[1].data.shift();
+		graph.data.datasets[2].data.shift();
+		graph.data.datasets[3].data.shift();
+		graph.data.datasets[4].data.shift();
+		graph.data.datasets[5].data.shift();
 	}
 	else updateCount++;
 	graph.update();
 }
+
+
+color = ['#80CAF6','#DF56F1','#FF5733','#2A79DE','#AA2ADE','#32DE2A'];
 ctx = $("#plot_data_time")[0].getContext('2d');
 graph = new Chart(ctx, {
 	type: 'line',
 	labels: [],
 	data: {
 		datasets: [{
-			borderColor: "blue",
-			backgroundColor: "blue",
-			pointRadius:1,
+			borderColor: color[0],
+			backgroundColor: color[0],
+			pointRadius:2,
 			showLine:false,
-			borderWidth:1,
+			borderWidth:2,
+			data: [ ],
+		},
+		{
+			borderColor: color[1],
+			backgroundColor: color[1],
+			pointRadius:2,
+			showLine:false,
+			borderWidth:2,
+			data: [ ],
+		},
+	    {
+			borderColor: color[2],
+			backgroundColor: color[2],
+			pointRadius:2,
+			showLine:false,
+			borderWidth:2,
+			data: [ ],
+		},
+	    {
+			borderColor: color[3],
+			backgroundColor: color[3],
+			pointRadius:2,
+			showLine:false,
+			borderWidth:2,
+			data: [ ],
+		},
+		{
+			borderColor: color[4],
+			backgroundColor: color[4],
+			pointRadius:2,
+			showLine:false,
+			borderWidth:2,
+			data: [ ],
+		},
+		{
+			borderColor: color[5],
+			backgroundColor: color[5],
+			pointRadius:2,
+			showLine:false,
+			borderWidth:2,
 			data: [ ],
 		},],
 	},
