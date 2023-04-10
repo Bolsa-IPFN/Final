@@ -246,6 +246,8 @@ function getPoints_old()
 function plot_data_charjs(data)
 {
 	if (data){
+		console.log("data")
+		console.log(data.value)
 		graph.data.labels.push(data.value.sample);
 		graph.data.datasets[0].data.push(data.value.temp);
 	}
