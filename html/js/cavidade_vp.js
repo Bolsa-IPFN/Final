@@ -325,6 +325,7 @@ graph = new Chart(ctx, {
 			data: [ ],
 		},],
 	},
+	xAxis_crosshair_enabled: true,
 	options: {
 		plugins: {
 			legend: {
