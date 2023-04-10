@@ -156,7 +156,7 @@ function getPoints()
 					/* console.log(j); 
 					console.log(typeof response.Data); */
 					//Plotly.extendTraces('graph', {x: Array(6).fill([response.value.sample]),y: [[response.value.temp],[response.value.temp_bot],[response.value.temp_in],[response.value.temp_north],[response.value.temp_south],[response.value.temp_top]]}, [0,1,2,3,4,5],240);
-					plot_data_charjs(response.value)
+					plot_data_charjs(response)
 					
 				}
 				// getPoints()
@@ -247,7 +247,7 @@ function plot_data_charjs(data)
 {
 	if (data){
 		graph.data.labels.push(data.time);
-		graph.data.datasets[0].data.concat(data.temp);
+		graph.data.datasets[0].data.concat(data.value.temp);
 	}
 	if (updateCount > numberElements){
 		graph.data.labels.shift();
