@@ -246,7 +246,7 @@ function getPoints_old()
 function plot_data_charjs(data)
 {
 	if (data){
-		graph.data.labels.push(new Date());
+		graph.data.labels.push(data.time);
 		graph.data.datasets[0].data.concat(data.temp);
 	}
 	if (updateCount > numberElements){
