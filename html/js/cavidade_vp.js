@@ -283,24 +283,7 @@ function plot_data_charjs(data)
 
 color = ['#9F1B00','#DF56F1','#FF5733','#2A79DE','#AA2ADE','#32DE2A'];
 
-const zoomOptions = {
-	pan: {
-	  enabled: true,
-	  mode: 'xy',
-	  modifierKey: 'ctrl',
-	},
-	zoom: {
-	  mode: 'xy',
-	  drag: {
-		enabled: true,
-		borderColor: 'rgb(54, 162, 235)',
-		borderWidth: 1,
-		backgroundColor: 'rgba(54, 162, 235, 0.3)'
-	  }
-	}
-  };
-
-
+ 
 ctx = $("#plot_data_time")[0].getContext('2d');
 graph = new Chart(ctx, {
 	type: 'line',
@@ -364,11 +347,25 @@ graph = new Chart(ctx, {
 	// xAxis_crosshair_enabled: true,
 	options: {
 		plugins: {
-			zoom: zoomOptions,
-			// legend: {
-			// 	display: false,
-			// }, 
-			// autocolors: false,
+		zoom: {
+			pan: {
+			  enabled: true,
+			  mode: 'xy',
+			  threshold: 5,
+			},
+			zoom: {
+			  // mode: 'xy',
+			  // overScaleMode: 'xy',
+			  wheel: {
+				enabled: true,
+				speed: 0.1,
+			  },
+			  // mode: 'x',
+			  // drag: {
+			  //  enabled: true,
+			  // }
+			}
+		  }
 		},
 		scales: {
 			y: {
@@ -405,6 +402,15 @@ graph = new Chart(ctx, {
 		}
 	  }
 });
+
+function resetZoomChart() {
+    graph.resetZoom(); 
+  }
+  
+function zoomChart(speed) {
+    graph.zoom(speed); 
+  }
+
 //{'msg_id': '11', 'timestamp': '1626908928778728200', 'status': 'Experiment Ended', 'Data': ''}
 function myStopFunction() {
   clearInterval(Results);

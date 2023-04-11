@@ -150,6 +150,11 @@
 				<!-- <div id='graph'> -->
 				<canvas id="plot_data_time" style=" margin:center; margin-left: 20px; margin-top: 20px; max-width: 1400px; max-height: 600px; "></canvas>
 			</div>
+			<div align="right" style="margin-top: 10px;">
+				<button onclick="zoomChart(1.1)">Zoom In</button>
+				<button onclick="zoomChart(0.9)">Zoom Out</button>
+				<button onclick="resetZoomChart()">Reset</button>
+			</div>
 		</div>
 	<div class="footer" >
 		<p style= "margin-top:5px;">Frontend and Backend created by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/PedroRossa98" property="cc:attributionName" rel="cc:attributionURL">Pedro Rosa</a> and improved by 
@@ -161,6 +166,9 @@
  
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/2.0.1/chartjs-plugin-zoom.min.js"></script>
 <script type="text/javascript" src='js/elab.js'></script>
 <script type="text/javascript" src='js/cavidade_vp.js'></script>
 
