@@ -283,6 +283,14 @@ function plot_data_charjs(data)
 
 color = ['#9F1B00','#DF56F1','#FF5733','#2A79DE','#AA2ADE','#32DE2A'];
 
+const footer = (tooltipItems) => {
+	let sum = 0;
+  
+	tooltipItems.forEach(function(tooltipItem) {
+	  sum += tooltipItem.parsed.y;
+	});
+	return 'Sum: ' + sum;
+  };
  
 ctx = $("#plot_data_time")[0].getContext('2d');
 graph = new Chart(ctx, {
@@ -346,6 +354,10 @@ graph = new Chart(ctx, {
 	},
 	// xAxis_crosshair_enabled: true,
 	options: {
+		interaction: {
+			intersect: false,
+			mode: 'index',
+		},
 		plugins: {
 			zoom: {
 				pan: {
@@ -370,17 +382,20 @@ graph = new Chart(ctx, {
 				position: "right",
 			},
 			tooltips: {
-				usePointStyle: true,
 				callbacks: {
-					labelColor: tooltipItem => {
-					//   console.log(tooltipItem.datasetIndex)
-					//   var color = tooltipItem.datasetIndex == 0 ? 'green' : 'red';
-						return {
-							borderColor: color[tooltipItem.datasetIndex],
-							backgroundColor: color[tooltipItem.datasetIndex]
-						}
+					footer: footer,
 					}
-				}
+				// usePointStyle: true,
+				// callbacks: {
+				// 	labelColor: tooltipItem => {
+				// 	//   console.log(tooltipItem.datasetIndex)
+				// 	//   var color = tooltipItem.datasetIndex == 0 ? 'green' : 'red';
+				// 		return {
+				// 			borderColor: color[tooltipItem.datasetIndex],
+				// 			backgroundColor: color[tooltipItem.datasetIndex]
+				// 		}
+				// 	}
+				// }
 			}
 		},
 		scales: {
