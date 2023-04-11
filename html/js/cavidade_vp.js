@@ -347,76 +347,60 @@ graph = new Chart(ctx, {
 	// xAxis_crosshair_enabled: true,
 	options: {
 		plugins: {
-		zoom: {
-			pan: {
-			  enabled: true,
-			  mode: 'xy',
-			  threshold: 5,
-			},
 			zoom: {
-			  // mode: 'xy',
-			  // overScaleMode: 'xy',
-			  wheel: {
+				pan: {
 				enabled: true,
-				speed: 0.1,
-			  },
-			  // mode: 'x',
-			  // drag: {
-			  //  enabled: true,
-			  // }
-			}
-		  },
-		  tooltips: {
-			mode: 'index',
-			callbacks: {
-			  labelColor: tooltipItem => {
-			  //   console.log(tooltipItem.datasetIndex)
-			  //   var color = tooltipItem.datasetIndex == 0 ? 'green' : 'red';
-				return {
-				  borderColor: color[tooltipItem.datasetIndex],
-				  backgroundColor: color[tooltipItem.datasetIndex]
+				mode: 'xy',
+				threshold: 5,
+				},
+				zoom: {
+				// mode: 'xy',
+				// overScaleMode: 'xy',
+				wheel: {
+					enabled: true,
+					speed: 0.1,
+				},
+				// mode: 'x',
+				// drag: {
+				//  enabled: true,
+				// }
 				}
-			  }
+			},
+			legend: {
+				position: "right",
+			},
+			tooltips: {
+				usePointStyle: true,
+				callbacks: {
+					labelColor: tooltipItem => {
+					//   console.log(tooltipItem.datasetIndex)
+					//   var color = tooltipItem.datasetIndex == 0 ? 'green' : 'red';
+						return {
+							borderColor: color[tooltipItem.datasetIndex],
+							backgroundColor: color[tooltipItem.datasetIndex]
+						}
+					}
+				}
 			}
-		  },
-		  legend: {
-			position: "right",
-		},
 		},
 		scales: {
-			y: {
-				title:{
-					display: true, 
-					text: 'Temperature [K]',
-				}
-				//  min: 8.5,
-				//max: 9.5,
-			},
-			x: {
-				title:{
-					display: true, 
-					text: 'Time [HH:MM:SS]',
+				y: {
+					title:{
+						display: true, 
+						text: 'Temperature [K]',
+					}
+					//  min: 8.5,
+					//max: 9.5,
 				},
-			},
+				x: {
+					title:{
+						display: true, 
+						text: 'Time [HH:MM:SS]',
+					},
+				},
 		},
 		responsive: true,
-		legend: {
-			position: "right",
-		},
-		tooltips: {
-		  mode: 'index',
-		  callbacks: {
-			labelColor: tooltipItem => {
-			//   console.log(tooltipItem.datasetIndex)
-			//   var color = tooltipItem.datasetIndex == 0 ? 'green' : 'red';
-			  return {
-				borderColor: color[tooltipItem.datasetIndex],
-				backgroundColor: color[tooltipItem.datasetIndex]
-			  }
-			}
-		  }
-		}
-	  }
+	}
 });
 
 function resetZoomChart() {
