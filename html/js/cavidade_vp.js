@@ -365,7 +365,23 @@ graph = new Chart(ctx, {
 			  //  enabled: true,
 			  // }
 			}
-		  }
+		  },
+		  tooltips: {
+			mode: 'index',
+			callbacks: {
+			  labelColor: tooltipItem => {
+			  //   console.log(tooltipItem.datasetIndex)
+			  //   var color = tooltipItem.datasetIndex == 0 ? 'green' : 'red';
+				return {
+				  borderColor: color[tooltipItem.datasetIndex],
+				  backgroundColor: color[tooltipItem.datasetIndex]
+				}
+			  }
+			}
+		  },
+		  legend: {
+			position: "right",
+		},
 		},
 		scales: {
 			y: {
