@@ -94,3 +94,25 @@ def get_temperature_all(db: Session):
 
     return db_data_list     
 
+
+def add_valve(db: Session, name_id, data):
+    table = models.Valve
+    now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+    db_data = table(name= name_id, value=data, time=datetime.strptime(now, '%Y-%m-%d %H:%M:%S'))
+
+    db.add(db_data)
+    db.commit()
+    db.refresh(db_data)
+    print('add_valve db_data : ', db_data.id)
+
+def update_valve(db: Session, name_id, data):
+    table = models.Valve
+    now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+    db_data = table(name= name_id, value=data, time=datetime.strptime(now, '%Y-%m-%d %H:%M:%S'))
+
+    db.add(db_data)
+    db.commit()
+    db.refresh(db_data)
+    print('add_valve db_data : ', db_data.id)

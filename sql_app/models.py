@@ -36,3 +36,11 @@ class Temperature(Base):
     value = Column(JSON, index=True)
     time = Column(DATETIME(fsp=0), default=datetime.datetime.utcnow)
 
+class Valve(Base):
+    __tablename__ = "valve"
+
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String, index=True)
+    value = Column(JSON, index=True)
+    time = Column(DATETIME(fsp=0), default=datetime.datetime.utcnow)
+
