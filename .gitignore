@@ -1,3 +1,6 @@
 sql_app/temperature_data_base.db
+html/internet
+html/Check_Data/internet
 
+sql_app/__pycache__/*.pyc
 nginx-1.20.1   

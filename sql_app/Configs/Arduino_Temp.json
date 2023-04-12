@@ -2,7 +2,7 @@
   "id": "Arduino_Temp",
   "serial_port": {
      "ports_restrict": [
-        "COM3"
+        "/dev/ttyACM0"
       ],
       "baud": "9600",
       "numbits": "8",
