@@ -4,6 +4,7 @@ certifi==2021.5.30
 cffi==1.14.6
 click==8.0.1
 colorama==0.4.4
+DateTime==4.3
 fastapi==0.68.0
 greenlet==1.1.1
 h11==0.12.0
@@ -11,7 +12,9 @@ h2==4.0.0
 hpack==4.0.0
 Hypercorn==0.11.2
 hyperframe==6.0.1
+numpy==1.16.2
 priority==2.0.0
+pyserial==3.4
 pycparser==2.20
 pydantic==1.8.2
 six==1.16.0

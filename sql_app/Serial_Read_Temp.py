@@ -169,12 +169,13 @@ def receive_data_from_exp(db):
                 print("MENSAGEM DO Arduino:\n")
                 print(json.dumps(Arduino_message,indent=4))
                 print("\-------- --------/\n")
+                crud.add_temperature(db, Arduino_message)
             except:
                 do_reset_serial_com()
                 Arduino_message = {'error':'faill to read Serial port trying to rest!'}
                 print("Ponto deu erro no JSON!!!")
             
-            crud.add_temperature(db, Arduino_message)
+            
 
 
 def temperaturelist_data(db, limit: int = 1):
